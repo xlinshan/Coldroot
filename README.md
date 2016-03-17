@@ -17,4 +17,11 @@ for the TCP communications<br>
 i'm using Indy : <a href="http://www.indyproject.org">Download</a> <br>
 
 That's all for now ... <br>
-i'll update this every week .. so stay tuned :V
+i'll update this every week .. so stay tuned :V <br><br>
+
+#Build<br>
+at first i think you should configure the "I-Pascal" plugin with "Intellij IDEA"<br>
+then try to compile any small code or the code it self 😁 <br>
+when u finish and want make Bundle for your out <br>
+goto $project-path/"out/production/" and run "sh Bundle.sh" so u can get the final output 😉 <br><br><br>
+with love from the Home 🌹
