@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module exeOutputPath="" mainFile="$MODULE_DIR$/Cold.pas" type="PASCAL_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/out/production" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="Free Pascal v. 3.0.0 | i386 darwin" jdkType="FPCSdkType" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
