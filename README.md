@@ -1,7 +1,7 @@
 # Coldroot
 Mac OS Trojan made with love &lt;3
 ===================================
-i make this one cuz i bevelive we don't give Mac it's rights in this field :P
+i make this one cuz i believe we don't give Mac it's rights in this field :P
 
 so i decided to make this Trojan to Play with Mac users 😂
 
