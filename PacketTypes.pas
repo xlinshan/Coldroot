@@ -53,13 +53,16 @@ const
         //#
         //#
     H_RemoteDesktop = 15;  //#
+
     H_RD_STOP       = 16;  //#
     H_RD_START      = 17;  //#
         //#
+
     H_MouseDown     = 18;  //#
     H_MouseUp       = 19;  //#
     H_MouseMove     = 20;  //#
     H_KeyDown       = 21;  //#
+
     H_ACTIVE_WINDOW = 22;  //#
 //#######################//#
 

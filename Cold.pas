@@ -43,7 +43,8 @@ begin
         MainClient.Intercept  := inter;
 
         thread := TMainClientThread.Create(false);
-        thread.IP := '127.0.0.1';
+        thread.IP := '10.211.55.9';
+        thread.Port := 889;
         thread.TCPClient := MainClient;
         thread.Active := true;
         thread.WaitFor();

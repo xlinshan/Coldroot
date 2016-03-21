@@ -1,2 +1,10 @@
 
 .idea/workspace.xml
+
+*.o
+
+*.ppu
+
+*.rsj
+
+out/production/Coldroot/Cold
