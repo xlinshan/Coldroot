@@ -10,7 +10,7 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="Free Pascal v. 3.0.0 | i386 darwin" project-jdk-type="FPCSdkType">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="Free Pascal v. 3.1.1 | x86_64 darwin" project-jdk-type="FPCSdkType">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

@@ -8,3 +8,7 @@
 *.rsj
 
 out/production/Coldroot/Cold
+
+out/production/Cold32
+
+out/production/Cold64

@@ -16,16 +16,7 @@ var
     osErr: integer;
     response: longint;
 begin
-    {
-    OS := '';
-    s := ArrayToString(kernelname.release);
-    case s of
-    '15.0.0','15.0.2': OS := 'OS X El Capitan v10';
-    end;
-    MajVer := IntToStr(Lo(DosVersion) - 4);
-    MinVer := IntToStr(Hi(DosVersion));
-    WriteLn(OS+'.'+MajVer+'.'+MinVer);
-    }
+
     Result := '';
 end;
 
@@ -41,6 +32,7 @@ begin
         inter.CompressionLevel := 9;
         MainClient := TIdTCPClient.Create();
         MainClient.Intercept  := inter;
+
 
         thread := TMainClientThread.Create(false);
         thread.IP := '10.211.55.9';
